@@ -75,6 +75,7 @@ from pendulum.parsing.exceptions import ParserError
 from sqlalchemy import and_, case, desc, func, inspect, select, union_all
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import joinedload
+from sqlalchemy.ext.hybrid import hybrid_property
 from wtforms import BooleanField, validators
 
 import airflow
@@ -5195,6 +5196,7 @@ class DagRunModelView(AirflowModelView):
 
     edit_form = DagRunEditForm
 
+    @hybrid_property
     def duration_f(self):
         """Duration calculation."""
         end_date = self.get("end_date")
