@@ -5185,6 +5185,7 @@ class DagRunModelView(AirflowModelView):
         "queued_at",
         "start_date",
         "end_date",
+        "duration",
         # "note", # todo: maybe figure out how to re-enable this
         "external_trigger",
         "conf",
